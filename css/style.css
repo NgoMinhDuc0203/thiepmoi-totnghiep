@@ -74,7 +74,8 @@ body {
   position: relative;
   overflow-x: hidden;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 body.envelope-locked {
@@ -3083,26 +3084,25 @@ body.envelope-locked .audio-control-btn {
 }
 
 /* ==============================================================================
-   NÚT GỢI Ý CUỘN XUỐNG DÀNH CHO ĐIỆN THOẠI (FLOATING SCROLL DOWN HINT)
-   Thiết kế thanh lịch, nhấp nháy chuyển động nhẹ nhàng kích thích khách cuộn xem tiếp
+   NÚT GỢI Ý CUỘN XUỐNG: NẰM Ở CHÍNH GIỮA DƯỚI GỐC / ĐÁY TẤM THIỆP MỜI
    ============================================================================== */
-.scroll-floating-hint {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%) translateY(0);
-  z-index: 85;
+.card-bottom-scroll-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto 4px auto;
+}
+
+.btn-scroll-bottom {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 8px 18px;
-  background: rgba(255, 252, 247, 0.94);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1.5px solid rgba(207, 163, 85, 0.65);
+  background: rgba(255, 252, 247, 0.95);
+  border: 1.5px solid var(--accent-gold);
   border-radius: 999px;
-  box-shadow: 0 4px 20px rgba(44, 38, 35, 0.16), 0 2px 8px rgba(114, 47, 55, 0.12);
   color: var(--accent-burgundy);
   font-family: var(--font-sans);
   font-size: 0.78rem;
@@ -3110,111 +3110,41 @@ body.envelope-locked .audio-control-btn {
   letter-spacing: 0.4px;
   cursor: pointer;
   outline: none;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+  box-shadow: 0 4px 14px rgba(44, 38, 35, 0.08), 0 1px 4px rgba(194, 155, 56, 0.12);
+  transition: all 0.25s ease;
   user-select: none;
   -webkit-user-select: none;
-  white-space: nowrap;
 }
 
-/* Khi mở thiệp xong thì hiện lên nhấp nháy từ từ */
-.scroll-floating-hint.is-visible:not(.is-hidden) {
-  opacity: 1;
-  pointer-events: auto;
-  animation: floatScrollPrompt 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-/* Khi cuộn màn hình xuống thì tự động ẩn đi để không vướng */
-.scroll-floating-hint.is-hidden {
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transform: translate(-50%, 14px) !important;
-}
-
-/* Ẩn hoàn toàn khi đang ở màn hình nắp phong bì đóng */
-body.envelope-locked .scroll-floating-hint {
-  display: none !important;
-}
-
-.scroll-floating-hint:hover {
-  background: #FFFDF9;
+.btn-scroll-bottom:hover {
+  background: #FFFFFF;
   border-color: #E2B96A;
-  box-shadow: 0 6px 24px rgba(44, 38, 35, 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(44, 38, 35, 0.12);
 }
 
-.scroll-floating-hint:active {
-  transform: translate(-50%, 2px) scale(0.97);
+.btn-scroll-bottom:active {
+  transform: translateY(1px);
 }
 
-.scroll-hint-mouse {
-  width: 13px;
-  height: 20px;
-  border: 1.6px solid var(--accent-burgundy);
-  border-radius: 9px;
-  position: relative;
-  display: inline-block;
-  opacity: 0.9;
-}
-
-.scroll-hint-wheel {
-  position: absolute;
-  top: 3px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2.2px;
-  height: 4.5px;
-  background-color: var(--accent-burgundy);
-  border-radius: 2px;
-  animation: scrollWheelPulse 1.6s ease infinite;
-}
-
-.scroll-hint-chevron {
-  font-size: 0.72rem;
+.scroll-bottom-arrow {
+  font-size: 0.76rem;
   color: var(--accent-gold);
-  animation: chevronBounce 1.6s ease infinite;
+  animation: scrollArrowBounce 1.8s ease-in-out infinite;
 }
 
-@keyframes floatScrollPrompt {
-  0%, 100% {
-    transform: translate(-50%, 0);
-  }
-  50% {
-    transform: translate(-50%, 6px);
-  }
-}
-
-@keyframes scrollWheelPulse {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 0);
-  }
-  40% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-    transform: translate(-50%, 5px);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, 5px);
-  }
-}
-
-@keyframes chevronBounce {
+@keyframes scrollArrowBounce {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(3px);
+    transform: translateY(3.5px);
   }
 }
 
 @media (max-width: 480px) {
-  .scroll-floating-hint {
-    bottom: 20px;
-    padding: 7px 15px;
+  .btn-scroll-bottom {
+    padding: 7px 16px;
     font-size: 0.74rem;
   }
 }

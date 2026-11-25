@@ -67,15 +67,6 @@
     <span class="music-wave-note note-2">♫</span>
   </button>
 
-  <!-- Nút Gợi Ý Cuộn Xuống Khám Phá Tiếp (Floating Scroll Down Hint) -->
-  <button type="button" id="scrollHint" class="scroll-floating-hint" aria-label="Cuộn xuống để xem tiếp thiệp mời" title="Cuộn xuống xem tiếp">
-    <span class="scroll-hint-mouse" aria-hidden="true">
-      <span class="scroll-hint-wheel"></span>
-    </span>
-    <span class="scroll-hint-text">Cuộn xuống để xem tiếp</span>
-    <i class="fa-solid fa-chevron-down scroll-hint-chevron" aria-hidden="true"></i>
-  </button>
-
   <!-- ======================================================== -->
   <!-- MÀN HÌNH PHONG BÌ BỨC THƯ CHỜ MỞ THIỆP (ENVELOPE INTRO)  -->
   <!-- Khách bấm vào phong bì sẽ mở nắp & hiện ra thiệp mời     -->
@@ -259,6 +250,14 @@
         <p class="invitation-card-note reveal reveal-delay-5">
           "Sự hiện diện và những lời chúc tốt đẹp của bạn sẽ làm cho ngày này trở nên đáng nhớ hơn bao giờ hết!"
         </p>
+
+        <!-- GỢI Ý CUỘN XUỐNG: NẰM Ở CHÍNH GIỮA DƯỚI GỐC / ĐÁY TẤM THIỆP -->
+        <div class="card-bottom-scroll-wrap reveal reveal-delay-5">
+          <button type="button" id="cardScrollBtn" class="btn-scroll-bottom" aria-label="Cuộn xuống để xem tiếp thiệp mời" title="Cuộn xuống xem tiếp">
+            <span class="scroll-bottom-text">Cuộn xuống xem tiếp</span>
+            <i class="fa-solid fa-chevron-down scroll-bottom-arrow"></i>
+          </button>
+        </div>
       </div>
     </header>
 

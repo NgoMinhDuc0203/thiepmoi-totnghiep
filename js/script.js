@@ -106,12 +106,6 @@ function initEnvelopeIntro() {
         audioControl.classList.add("is-visible");
       }
 
-      // Hiện nút gợi ý cuộn xuống khám phá tiếp
-      const scrollHint = document.getElementById("scrollHint");
-      if (scrollHint) {
-        scrollHint.classList.add("is-visible");
-      }
-
       // Kích hoạt Scroll Reveal để các phần trên đầu thiệp hiện dần từng cái một
       initScrollReveal();
     }, 2050);
@@ -624,28 +618,19 @@ function fallbackCopyTextToClipboard(text) {
 }
 
 // ==============================================================================
-// 9. XỬ LÝ GỢI Ý CUỘN XUỐNG DÀNH CHO KHÁCH XEM ĐIỆN THOẠI (SCROLL HINT)
+// 9. XỬ LÝ GỢI Ý CUỘN XUỐNG: NẰM Ở CHÍNH GIỮA DƯỚI GỐC / ĐÁY TẤM THIỆP
 // ==============================================================================
 function initScrollHint() {
-  const scrollHint = document.getElementById("scrollHint");
+  const scrollBtn = document.getElementById("cardScrollBtn");
   const targetSection = document.getElementById("portrait-section");
-  if (!scrollHint) return;
+  if (!scrollBtn) return;
 
-  // Khi bấm vào nút gợi ý thì cuộn mượt xuống phần ảnh & lời ngỏ
-  scrollHint.addEventListener("click", () => {
+  // Khi bấm vào nút thì cuộn mượt xuống phần ảnh & lời ngỏ
+  scrollBtn.addEventListener("click", () => {
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: "smooth" });
     }
   });
-
-  // Khi người dùng tự cuộn quá 60px thì ẩn nút đi để tránh che khuất nội dung
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 60) {
-      scrollHint.classList.add("is-hidden");
-    } else if (!document.body.classList.contains("envelope-locked")) {
-      scrollHint.classList.remove("is-hidden");
-    }
-  }, { passive: true });
 }
 
 /**
