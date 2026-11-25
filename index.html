@@ -48,8 +48,8 @@
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Custom Stylesheet (v=2026112603 để tránh cache CSS cũ) -->
+  <link rel="stylesheet" href="css/style.css?v=2026112603">
 </head>
 <body class="envelope-locked">
 
@@ -65,12 +65,6 @@
     </div>
     <span class="music-wave-note note-1">♪</span>
     <span class="music-wave-note note-2">♫</span>
-  </button>
-
-  <!-- Nút Gợi Ý Cuộn Lơ Lửng Ở Chính Giữa Màn Hình (Floating Scroll Button) -->
-  <button type="button" id="floatingScrollBtn" class="floating-scroll-btn" aria-label="Cuộn xuống để xem tiếp thiệp mời" title="Cuộn xuống xem tiếp">
-    <span class="floating-scroll-text">Cuộn xuống xem tiếp</span>
-    <i class="fa-solid fa-chevron-down floating-scroll-icon"></i>
   </button>
 
   <!-- ======================================================== -->
@@ -712,10 +706,23 @@
 
   </div>
 
+  <!-- Gợi ý lướt xuống nho nhỏ, thẩm mỹ ở chính giữa góc dưới màn hình -->
+  <div id="scrollHint" class="scroll-hint" aria-hidden="true">
+    <span class="scroll-hint-text">Lướt xuống</span>
+    <span class="scroll-hint-arrows">
+      <svg class="scroll-hint-chevron chevron-top" viewBox="0 0 16 8" width="13" height="6.5" fill="none">
+        <path d="M1.5 1.5L8 6.5L14.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg class="scroll-hint-chevron chevron-bottom" viewBox="0 0 16 8" width="13" height="6.5" fill="none">
+        <path d="M1.5 1.5L8 6.5L14.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </div>
+
   <!-- Toast notification component -->
   <div id="toastNotification" class="toast-notification"></div>
 
-  <!-- JavaScript -->
-  <script src="js/script.js"></script>
+  <!-- JavaScript (v=2026112603 để tránh cache JS cũ) -->
+  <script src="js/script.js?v=2026112603"></script>
 </body>
 </html>

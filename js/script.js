@@ -68,9 +68,9 @@ function initEnvelopeIntro() {
   // Nếu không có màn hình phong bì thì chạy hiệu ứng cuộn luôn
   if (!overlay) {
     document.body.classList.remove("envelope-locked");
-    const floatingScroll = document.getElementById("floatingScrollBtn");
-    if (floatingScroll) {
-      floatingScroll.classList.add("is-visible");
+    const scrollHint = document.getElementById("scrollHint");
+    if (scrollHint && window.scrollY <= 35) {
+      scrollHint.classList.add("is-visible");
     }
     initScrollReveal();
     return;
@@ -110,10 +110,10 @@ function initEnvelopeIntro() {
         audioControl.classList.add("is-visible");
       }
 
-      // Hiện nút gợi ý cuộn lơ lửng ở chính giữa màn hình
-      const floatingScroll = document.getElementById("floatingScrollBtn");
-      if (floatingScroll) {
-        floatingScroll.classList.add("is-visible");
+      // Hiện gợi ý lướt xuống nho nhỏ ở chính giữa góc dưới màn hình
+      const scrollHint = document.getElementById("scrollHint");
+      if (scrollHint && window.scrollY <= 35) {
+        scrollHint.classList.add("is-visible");
       }
 
       // Kích hoạt Scroll Reveal để các phần trên đầu thiệp hiện dần từng cái một
@@ -628,30 +628,32 @@ function fallbackCopyTextToClipboard(text) {
 }
 
 // ==============================================================================
-// 9. XỬ LÝ GỢI Ý CUỘN LƠ LỬNG Ở CHÍNH GIỮA (FLOATING SCROLL HINT)
+// 9. XỬ LÝ GỢI Ý LƯỚT XUỐNG NHO NHỎ, THẨM MỸ Ở CHÍNH GIỮA GỐC DƯỚI MÀN HÌNH
 // ==============================================================================
 function initScrollHint() {
-  const scrollBtn = document.getElementById("floatingScrollBtn");
+  const scrollHint = document.getElementById("scrollHint");
   const targetSection = document.getElementById("portrait-section");
-  if (!scrollBtn) return;
+  if (!scrollHint) return;
 
-  // Khi bấm vào nút thì cuộn mượt xuống phần ảnh & lời ngỏ
-  scrollBtn.addEventListener("click", () => {
+  // Khi người xem chạm vào gợi ý thì ẩn đi và cuộn mượt xuống phần ảnh & lời ngỏ
+  scrollHint.addEventListener("click", () => {
+    scrollHint.classList.add("is-hidden");
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: "smooth" });
     }
   });
 
-  // Khi cuộn xuống sâu vào trang, ẩn nút lơ lửng để không che nội dung
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 250) {
-      scrollBtn.classList.add("is-hidden");
-    } else {
-      if (!document.body.classList.contains("envelope-locked")) {
-        scrollBtn.classList.remove("is-hidden");
-      }
+  // Ngay khi người xem lướt xuống thì gợi ý biến mất; chỉ hiện lại nếu cuộn hẳn lên đầu trang
+  const syncScrollHintVisibility = () => {
+    if (document.body.classList.contains("envelope-locked")) return;
+    if (window.scrollY > 35) {
+      scrollHint.classList.add("is-hidden");
+    } else if (window.scrollY <= 12) {
+      scrollHint.classList.remove("is-hidden");
     }
-  }, { passive: true });
+  };
+
+  window.addEventListener("scroll", syncScrollHintVisibility, { passive: true });
 }
 
 /**
