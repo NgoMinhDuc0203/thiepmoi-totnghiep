@@ -3084,66 +3084,97 @@ body.envelope-locked .audio-control-btn {
 }
 
 /* ==============================================================================
-   NÚT GỢI Ý CUỘN XUỐNG: NẰM Ở CHÍNH GIỮA DƯỚI GỐC / ĐÁY TẤM THIỆP MỜI
+   NÚT GỢI Ý CUỘN LƠ LỬNG Ở CHÍNH GIỮA (FLOATING CENTERED SCROLL BUTTON)
+   Lơ lửng bồng bềnh ở giữa dưới màn hình, không dính vào thiệp
    ============================================================================== */
-.card-bottom-scroll-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 20px auto 4px auto;
-}
-
-.btn-scroll-bottom {
+.floating-scroll-btn {
+  position: fixed;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  z-index: 98;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 8px 18px;
   background: rgba(255, 252, 247, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1.5px solid var(--accent-gold);
   border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(44, 38, 35, 0.16), 0 2px 6px rgba(194, 155, 56, 0.18);
   color: var(--accent-burgundy);
   font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
   cursor: pointer;
   outline: none;
-  box-shadow: 0 4px 14px rgba(44, 38, 35, 0.08), 0 1px 4px rgba(194, 155, 56, 0.12);
-  transition: all 0.25s ease;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease, background-color 0.2s ease, box-shadow 0.25s ease;
   user-select: none;
   -webkit-user-select: none;
+  white-space: nowrap;
 }
 
-.btn-scroll-bottom:hover {
+/* Khi đã mở phong bì thiệp thì hiện lên lơ lửng bồng bềnh */
+.floating-scroll-btn.is-visible:not(.is-hidden) {
+  opacity: 1;
+  pointer-events: auto;
+  animation: floatBobbing 2.4s ease-in-out infinite;
+}
+
+/* Ẩn khi cuộn xuống sâu vào trang */
+.floating-scroll-btn.is-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateX(-50%) translateY(14px) !important;
+}
+
+/* Ẩn khi nắp phong bì chưa mở */
+body.envelope-locked .floating-scroll-btn {
+  display: none !important;
+}
+
+.floating-scroll-btn:hover {
   background: #FFFFFF;
   border-color: #E2B96A;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(44, 38, 35, 0.12);
+  box-shadow: 0 10px 28px rgba(44, 38, 35, 0.22);
 }
 
-.btn-scroll-bottom:active {
-  transform: translateY(1px);
+.floating-scroll-btn:active {
+  transform: translateX(-50%) translateY(2px) scale(0.97);
 }
 
-.scroll-bottom-arrow {
-  font-size: 0.76rem;
+.floating-scroll-icon {
+  font-size: 0.75rem;
   color: var(--accent-gold);
-  animation: scrollArrowBounce 1.8s ease-in-out infinite;
+  animation: arrowBounceSoft 1.6s ease-in-out infinite;
 }
 
-@keyframes scrollArrowBounce {
+@keyframes floatBobbing {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-6px);
+  }
+}
+
+@keyframes arrowBounceSoft {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(3.5px);
+    transform: translateY(3px);
   }
 }
 
 @media (max-width: 480px) {
-  .btn-scroll-bottom {
+  .floating-scroll-btn {
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     padding: 7px 16px;
     font-size: 0.74rem;
   }

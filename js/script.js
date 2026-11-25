@@ -68,6 +68,10 @@ function initEnvelopeIntro() {
   // Nếu không có màn hình phong bì thì chạy hiệu ứng cuộn luôn
   if (!overlay) {
     document.body.classList.remove("envelope-locked");
+    const floatingScroll = document.getElementById("floatingScrollBtn");
+    if (floatingScroll) {
+      floatingScroll.classList.add("is-visible");
+    }
     initScrollReveal();
     return;
   }
@@ -104,6 +108,12 @@ function initEnvelopeIntro() {
       // Hiện nút điều khiển nhạc nền nếu có
       if (audioControl) {
         audioControl.classList.add("is-visible");
+      }
+
+      // Hiện nút gợi ý cuộn lơ lửng ở chính giữa màn hình
+      const floatingScroll = document.getElementById("floatingScrollBtn");
+      if (floatingScroll) {
+        floatingScroll.classList.add("is-visible");
       }
 
       // Kích hoạt Scroll Reveal để các phần trên đầu thiệp hiện dần từng cái một
@@ -618,10 +628,10 @@ function fallbackCopyTextToClipboard(text) {
 }
 
 // ==============================================================================
-// 9. XỬ LÝ GỢI Ý CUỘN XUỐNG: NẰM Ở CHÍNH GIỮA DƯỚI GỐC / ĐÁY TẤM THIỆP
+// 9. XỬ LÝ GỢI Ý CUỘN LƠ LỬNG Ở CHÍNH GIỮA (FLOATING SCROLL HINT)
 // ==============================================================================
 function initScrollHint() {
-  const scrollBtn = document.getElementById("cardScrollBtn");
+  const scrollBtn = document.getElementById("floatingScrollBtn");
   const targetSection = document.getElementById("portrait-section");
   if (!scrollBtn) return;
 
@@ -631,6 +641,17 @@ function initScrollHint() {
       targetSection.scrollIntoView({ behavior: "smooth" });
     }
   });
+
+  // Khi cuộn xuống sâu vào trang, ẩn nút lơ lửng để không che nội dung
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 250) {
+      scrollBtn.classList.add("is-hidden");
+    } else {
+      if (!document.body.classList.contains("envelope-locked")) {
+        scrollBtn.classList.remove("is-hidden");
+      }
+    }
+  }, { passive: true });
 }
 
 /**
