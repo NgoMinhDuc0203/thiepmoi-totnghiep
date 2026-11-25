@@ -50,6 +50,7 @@ const LOCAL_STORAGE_WISHES_KEY = "graduation_wishes_minhduc";
 document.addEventListener("DOMContentLoaded", () => {
   initEnvelopeIntro();
   initAudioPlayer();
+  initScrollHint();
   initCountdown();
   initGuestbook();
   initQuickWishModal();
@@ -103,6 +104,12 @@ function initEnvelopeIntro() {
       // Hiện nút điều khiển nhạc nền nếu có
       if (audioControl) {
         audioControl.classList.add("is-visible");
+      }
+
+      // Hiện nút gợi ý cuộn xuống khám phá tiếp
+      const scrollHint = document.getElementById("scrollHint");
+      if (scrollHint) {
+        scrollHint.classList.add("is-visible");
       }
 
       // Kích hoạt Scroll Reveal để các phần trên đầu thiệp hiện dần từng cái một
@@ -614,6 +621,31 @@ function fallbackCopyTextToClipboard(text) {
     showToast("Không thể tự động chép, vui lòng copy đường dẫn trên thanh trình duyệt!");
   }
   document.body.removeChild(textArea);
+}
+
+// ==============================================================================
+// 9. XỬ LÝ GỢI Ý CUỘN XUỐNG DÀNH CHO KHÁCH XEM ĐIỆN THOẠI (SCROLL HINT)
+// ==============================================================================
+function initScrollHint() {
+  const scrollHint = document.getElementById("scrollHint");
+  const targetSection = document.getElementById("portrait-section");
+  if (!scrollHint) return;
+
+  // Khi bấm vào nút gợi ý thì cuộn mượt xuống phần ảnh & lời ngỏ
+  scrollHint.addEventListener("click", () => {
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+  // Khi người dùng tự cuộn quá 60px thì ẩn nút đi để tránh che khuất nội dung
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+      scrollHint.classList.add("is-hidden");
+    } else if (!document.body.classList.contains("envelope-locked")) {
+      scrollHint.classList.remove("is-hidden");
+    }
+  }, { passive: true });
 }
 
 /**
