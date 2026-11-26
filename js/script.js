@@ -48,6 +48,7 @@ const LOCAL_STORAGE_WISHES_KEY = "graduation_wishes_minhduc";
 // 2. KHỞI TẠO KHI TẢI TRANG
 // ==============================================================================
 document.addEventListener("DOMContentLoaded", () => {
+  initRecipientFromUrl();
   initEnvelopeIntro();
   initAudioPlayer();
   initScrollHint();
@@ -56,6 +57,46 @@ document.addEventListener("DOMContentLoaded", () => {
   initQuickWishModal();
   initShareButton();
 });
+
+// ==============================================================================
+// 2A. ĐỌC THAM SỐ TO/NAME TỪ URL ĐỂ TỰ ĐỘNG ĐỔI TÊN NGƯỜI NHẬN THIỆP
+// ==============================================================================
+function initRecipientFromUrl() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const toParam = params.get("to") || params.get("name") || params.get("nguoinhan");
+    if (!toParam) return;
+
+    let cleanName = decodeURIComponent(toParam).trim();
+    if (!cleanName) return;
+
+    // Nếu ở trang nhóm 3 (/i/) và người dùng chỉ gõ tên (ví dụ: ?to=Hằng hoặc ?to=Chị+Hằng)
+    const isSpecialMentorPage = document.body.classList.contains("page-mentor-group");
+    let displayName = cleanName;
+    if (isSpecialMentorPage) {
+      if (!/^chị\b/i.test(displayName)) {
+        displayName = "Chị " + displayName;
+      }
+      if (!/kính mến$/i.test(displayName)) {
+        displayName = displayName + " kính mến";
+      }
+    }
+
+    // Thay thế vào mặt trước phong bì (thẻ em trong .envelope-pocket-to)
+    const pocketTo = document.querySelector(".envelope-pocket-to em");
+    if (pocketTo) {
+      pocketTo.textContent = displayName;
+    }
+
+    // Thay thế vào bên trong ruột thiệp (.recipients-name)
+    const cardRecipient = document.querySelector(".recipients-name");
+    if (cardRecipient) {
+      cardRecipient.textContent = displayName;
+    }
+  } catch (err) {
+    console.warn("Lỗi khi đọc tham số to trên URL:", err);
+  }
+}
 
 // ==============================================================================
 // 2B. XỬ LÝ MỞ PHONG BÌ BỨC THƯ (ENVELOPE INTRO)
