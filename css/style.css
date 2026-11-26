@@ -1429,6 +1429,8 @@ button {
   background-color: #FAF4EE;
   border-radius: var(--radius-sm);
   border-left: 3px solid var(--accent-burgundy);
+  line-height: 1.6;
+  text-wrap: balance;
 }
 
 /* ==========================================================================
