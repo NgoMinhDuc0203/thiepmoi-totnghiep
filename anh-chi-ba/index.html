@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Thiệp mời lễ tốt nghiệp - Ngô Minh Đức</title>
+
+  <!-- Meta SEO & Khung xem trước liên kết (OpenGraph cho Zalo, Messenger, Facebook, iMessage) -->
+  <meta name="description" content="Bốn năm thanh xuân khép lại trong một khoảnh khắc chuyển tua. Trân trọng kính mời Thầy Cô, Gia đình & Bạn bè đến chung vui cùng Tân khoa Ngô Minh Đức tại Đại học HUTECH.">
+  <meta name="author" content="Ngô Minh Đức">
+  
+  <!-- ================================================================================== -->
+  <!-- CẤU HÌNH HIỂN THỊ KHUNG XEM TRƯỚC (LINK PREVIEW) TRÊN ZALO, MESSENGER, FACEBOOK:    -->
+  <!-- Khi gửi link thiệp lên Zalo/Messenger, hệ thống sẽ tự động hiện khung đẹp như mẫu. -->
+  <!-- ================================================================================== -->
+  <link rel="canonical" href="https://ngominhduc0203.github.io/thiepmoi-totnghiep/anh-chi-ba/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ngominhduc0203.github.io/thiepmoi-totnghiep/anh-chi-ba/">
+  <!-- Dòng 1: Tiêu đề in đậm -->
+  <meta property="og:title" content="Graduation Ceremony Ngô Minh Đức | Thiệp mời lễ tốt nghiệp">
+  <!-- Dòng 2: Nội dung mô tả ngắn gọn, ý nghĩa -->
+  <meta property="og:description" content="Bốn năm thanh xuân khép lại trong một khoảnh khắc chuyển tua. Trân trọng kính mời bạn đến chung vui cùng Minh Đức!">
+  <!-- Dòng 3: Tên hiển thị nguồn website -->
+  <meta property="og:site_name" content="Thiệp mời lễ tốt nghiệp • Minh Đức K22">
+  <!-- Ảnh banner đại diện bức thư tỉ lệ chuẩn 1200x630 hiển thị rộng ngang cân đối (không bị hẹp 1 bên) -->
+  <meta property="og:image" content="https://ngominhduc0203.github.io/thiepmoi-totnghiep/images/buc-thu-banner.jpg?v=2026112605">
+  <meta property="og:image:secure_url" content="https://ngominhduc0203.github.io/thiepmoi-totnghiep/images/buc-thu-banner.jpg?v=2026112605">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bức thư mời lễ tốt nghiệp - Tân khoa Ngô Minh Đức">
+
+  <!-- Thẻ hỗ trợ Twitter / Telegram / iMessage -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ngominhduc0203.github.io/thiepmoi-totnghiep/anh-chi-ba/">
+  <meta name="twitter:title" content="Graduation Ceremony Ngô Minh Đức | Thiệp mời lễ tốt nghiệp">
+  <meta name="twitter:description" content="Bốn năm thanh xuân khép lại trong một khoảnh khắc chuyển tua. Trân trọng kính mời bạn đến chung vui cùng Minh Đức!">
+  <meta name="twitter:image" content="https://ngominhduc0203.github.io/thiepmoi-totnghiep/images/buc-thu-banner.jpg?v=2026112605">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+
+  <!-- Google Fonts: Be Vietnam Pro + Playfair Display + Cormorant Garamond + Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheet (v=2026112702 để tránh cache CSS cũ) -->
+  <link rel="stylesheet" href="../css/style.css?v=2026112702">
+</head>
+<body class="envelope-locked">
+
+  <!-- Thẻ Nhạc Nền Phát Khi Mở Thiệp Mời -->
+  <audio id="bgAudio" src="../audio/nhac-nen.mp3" preload="auto" loop playsinline></audio>
+
+  <!-- Nút Điều Khiển Bật / Tắt Nhạc Nền (Floating Music Button) -->
+  <button type="button" id="audioControl" class="audio-control-btn" aria-label="Bật/Tắt nhạc nền" title="Bật / Tắt nhạc nền">
+    <div class="music-disc-body">
+      <span class="music-disc-icon">
+        <i class="fa-solid fa-music"></i>
+      </span>
+    </div>
+    <span class="music-wave-note note-1">♪</span>
+    <span class="music-wave-note note-2">♫</span>
+  </button>
+
+  <!-- ======================================================== -->
+  <!-- MÀN HÌNH PHONG BÌ BỨC THƯ CHỜ MỞ THIỆP (ENVELOPE INTRO)  -->
+  <!-- Khách bấm vào phong bì sẽ mở nắp & hiện ra thiệp mời     -->
+  <!-- ======================================================== -->
+  <div id="envelopeOverlay" class="envelope-overlay" role="dialog" aria-modal="true" aria-label="Bấm để mở thiệp mời tốt nghiệp">
+    <div class="envelope-stage">
+      
+      <!-- Tiêu đề nhỏ phía trên bức thư -->
+      <div class="envelope-top-caption">
+        <span class="envelope-kicker">GRADUATION INVITATION • 2026</span>
+        <h2 class="envelope-heading">Thiệp mời lễ tốt nghiệp</h2>
+        <p class="envelope-subheading">Trân trọng gửi đến bạn từ Tân khoa <strong>Ngô Minh Đức</strong></p>
+      </div>
+
+      <!-- Khối Bức Thư 3D (Interactive Envelope) -->
+      <div id="envelopeCard" class="envelope-wrapper" tabindex="0" role="button" aria-label="Bấm vào bức thư để mở thiệp mời">
+        <div class="envelope-shadow"></div>
+
+        <div class="envelope-body">
+          <!-- Mặt trong nền phong bì -->
+          <div class="envelope-back"></div>
+
+          <!-- Tấm thiệp bên trong nhú nhẹ lên khi mở nắp -->
+          <div class="envelope-inner-card">
+            <div class="inner-card-border">
+              <img src="../images/logo-hutech.png" alt="Logo HUTECH" class="inner-card-logo">
+              <span class="inner-card-tag">HUTECH UNIVERSITY • K22</span>
+              <p class="inner-card-cursive">Minh Đức's</p>
+              <p class="inner-card-title">GRADUATION</p>
+              <p class="inner-card-date">19 . 12 . 2026</p>
+            </div>
+          </div>
+
+          <!-- Nếp gấp 2 bên và mặt trước dưới phong bì -->
+          <div class="envelope-pocket-left"></div>
+          <div class="envelope-pocket-right"></div>
+          <div class="envelope-pocket-bottom">
+            <span class="envelope-pocket-to">Dear: <em>Anh Chị Ba</em></span>
+          </div>
+
+          <!-- Nắp phong bì (Lật mở 3D lên trên) -->
+          <div class="envelope-flap"></div>
+
+          <!-- Con dấu sáp đỏ đô ở chính giữa (Wax Seal) -->
+          <div class="wax-seal-btn" aria-hidden="true">
+            <div class="wax-seal-ring">
+              <span class="wax-seal-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+              <span class="wax-seal-text">MĐ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hướng dẫn bấm mở -->
+      <button type="button" id="openEnvelopeBtn" class="envelope-open-prompt">
+        <span class="prompt-pulse-dot"></span>
+        <span>Chạm vào bức thư để mở thiệp mời</span>
+        <i class="fa-solid fa-hand-pointer prompt-hand-icon"></i>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Wrapper Container -->
+  <div class="invitation-container">
+
+    <!-- ======================================================== -->
+    <!-- PHẦN 1: THIỆP MỜI CHÍNH VỚI BĂNG RÔN PHỦ XUỐNG (HERO)   -->
+    <!-- Thiết kế theo mẫu tham khảo: Băng rôn thả dọc bên phải   -->
+    <!-- ======================================================== -->
+    <header class="formal-card-section" id="hero">
+      
+      <!-- KHUNG VIỀN HOA VĂN GÓC VÀNG KIM CỔ ĐIỂN (THEO ẢNH MẪU) -->
+      <div class="card-ornate-frame" aria-hidden="true">
+        <svg width="0" height="0" style="position:absolute;overflow:hidden;">
+          <defs>
+            <symbol id="gold-corner-flourish" viewBox="0 0 80 80">
+              <path d="M5 62 C5 44 4 20 6 7 C20 5 44 5 62 5" stroke="#CFA355" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+              <path d="M11 50 L11 11 L50 11" stroke="#CFA355" stroke-width="0.9" stroke-opacity="0.65" fill="none"/>
+              <path d="M11 11 C18 13 24 19 26 26 C19 24 13 18 11 11 Z" fill="#CFA355" fill-opacity="0.82"/>
+              <path d="M6 25 C12 24 16 29 14 35 C12 39 7 38 9 32" stroke="#CFA355" stroke-width="1.35" stroke-linecap="round" fill="none"/>
+              <path d="M6 42 C11 44 13 49 9 53" stroke="#CFA355" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+              <circle cx="9.5" cy="59" r="1.6" fill="#CFA355"/>
+              <path d="M25 6 C24 12 29 16 35 14 C39 12 38 7 32 9" stroke="#CFA355" stroke-width="1.35" stroke-linecap="round" fill="none"/>
+              <path d="M42 6 C44 11 49 13 53 9" stroke="#CFA355" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+              <circle cx="59" cy="9.5" r="1.6" fill="#CFA355"/>
+              <path d="M21 15 C27 15 31 18 31 23" stroke="#CFA355" stroke-width="1" stroke-linecap="round" fill="none"/>
+              <path d="M15 21 C15 27 18 31 23 31" stroke="#CFA355" stroke-width="1" stroke-linecap="round" fill="none"/>
+            </symbol>
+            <symbol id="gold-sparkle-star" viewBox="0 0 60 60">
+              <line x1="30" y1="2" x2="30" y2="58" stroke="#D9B166" stroke-width="0.8" stroke-opacity="0.45"/>
+              <line x1="2" y1="30" x2="58" y2="30" stroke="#D9B166" stroke-width="0.8" stroke-opacity="0.45"/>
+              <path d="M30 20 Q31.5 28.5 40 30 Q31.5 31.5 30 40 Q28.5 31.5 20 30 Q28.5 28.5 30 20 Z" fill="#D9B166" fill-opacity="0.72"/>
+            </symbol>
+          </defs>
+        </svg>
+
+        <div class="frame-border-inner"></div>
+        <svg class="corner-flourish corner-tl" viewBox="0 0 80 80"><use href="#gold-corner-flourish"/></svg>
+        <svg class="corner-flourish corner-tr" viewBox="0 0 80 80"><use href="#gold-corner-flourish"/></svg>
+        <svg class="corner-flourish corner-bl" viewBox="0 0 80 80"><use href="#gold-corner-flourish"/></svg>
+        <svg class="corner-flourish corner-br" viewBox="0 0 80 80"><use href="#gold-corner-flourish"/></svg>
+        <svg class="frame-sparkle sparkle-left" viewBox="0 0 60 60"><use href="#gold-sparkle-star"/></svg>
+        <svg class="frame-sparkle sparkle-bottom" viewBox="0 0 60 60"><use href="#gold-sparkle-star"/></svg>
+      </div>
+
+      <!-- DẢI BĂNG RÔN PHỦ DỌC XUỐNG BÊN PHẢI (NHƯ ẢNH MẪU) -->
+      <aside class="hanging-sash reveal" aria-label="Dải băng tốt nghiệp K22 - Ngô Minh Đức">
+        <div class="hanging-sash-ribbon">
+          <!-- Biểu tượng ngôi sao ✦ -->
+          <div class="sash-top-star">✦</div>
+          
+          <!-- Huy hiệu HUTECH trên dải băng -->
+          <div class="sash-seal">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <span class="sash-school-label">HUTECH</span>
+
+          <!-- Chữ dọc: TÊN TÂN KHOA NGÔ MINH ĐỨC -->
+          <div class="sash-vertical-names-wrap">
+            <span class="sash-name-vertical">NGÔ MINH ĐỨC</span>
+          </div>
+
+          <!-- Chữ dọc nhỏ: Ngành học -->
+          <div class="sash-degree-wrap">
+            <span class="sash-degree-vertical">Bachelor's Degree in IT • K22</span>
+          </div>
+
+          <!-- Nơ/Họa tiết ở đuôi chữ V -->
+          <div class="sash-bottom-bow">
+            <i class="fa-solid fa-ribbon"></i>
+          </div>
+        </div>
+      </aside>
+
+      <!-- NỘI DUNG TẤM THIỆP PHÍA BÊN TRÁI -->
+      <div class="formal-card-content">
+        <!-- Logo & Tên Trường -->
+        <div class="school-header reveal">
+          <!-- Logo HUTECH chính thức do bạn cung cấp -->
+          <img src="../images/logo-hutech.png" alt="Logo Đại học HUTECH" class="school-logo-img">
+          <div class="school-title-text">
+            <h2 class="school-vn">TRƯỜNG ĐẠI HỌC CÔNG NGHỆ TP.HCM</h2>
+            <p class="school-en">HUTECH UNIVERSITY</p>
+          </div>
+        </div>
+
+        <!-- Lời gửi trân trọng -->
+        <div class="card-salutation reveal reveal-delay-1">
+          <span class="dear-label">Dear</span>
+          <span class="recipients-name">Anh Chị Ba</span>
+          <div class="dashed-line"></div>
+        </div>
+
+        <p class="invite-subtext reveal reveal-delay-1">Thân mời bạn đến dự</p>
+
+        <!-- Tiêu đề Lễ tốt nghiệp (Graduation Ceremony) -->
+        <div class="ceremony-headline reveal reveal-delay-2">
+          <span class="cursive-name">Minh Đức's</span>
+          <h1 class="bold-ceremony-title">GRADUATION</h1>
+          <p class="ceremony-year">Ceremony 2026</p>
+        </div>
+
+        <!-- Khung thời gian & địa điểm (Theo đúng bố cục ảnh mẫu) -->
+        <div class="ceremony-details-box">
+          <div class="detail-block reveal reveal-delay-3">
+            <span class="block-tag">VÀO LÚC</span>
+            <p class="block-main time-range">08:30 SÁNG</p>
+            <p class="block-sub day-name">THỨ BẢY</p>
+            <p class="block-date">19.12.2026</p>
+          </div>
+
+          <div class="detail-block reveal reveal-delay-4">
+            <span class="block-tag">TẠI</span>
+            <p class="block-main venue-name">KHU E — ĐẠI HỌC HUTECH</p>
+            <p class="block-address">10/80c Song Hành Xa Lộ Hà Nội, Tăng Nhơn Phú, TP. Hồ Chí Minh</p>
+          </div>
+        </div>
+
+        <!-- Lời nhắn chân thành -->
+        <p class="invitation-card-note reveal reveal-delay-5">
+          "Sự hiện diện và những lời chúc tốt đẹp của bạn sẽ làm cho ngày này trở nên đáng nhớ hơn bao giờ hết!"
+        </p>
+      </div>
+    </header>
+
+
+    <!-- ======================================================== -->
+    <!-- PHẦN 2: ẢNH CHÂN DUNG TỐT NGHIỆP THEO KHUNG MẪU POLAROID -->
+    <!-- ======================================================== -->
+    <section class="portrait-showcase-section" id="portrait-section">
+      
+      <!-- Khung ảnh Polaroid cao cấp theo mẫu tham khảo -->
+      <div class="polaroid-vintage-container reveal">
+        <!-- Băng dính Washi Tape góc trên bên phải -->
+        <div class="washi-tape-strip tape-top-right"></div>
+        <!-- Băng dính Washi Tape góc dưới bên trái -->
+        <div class="washi-tape-strip tape-bottom-left"></div>
+
+        <!-- Trái tim vẽ tay góc dưới bên trái -->
+        <div class="doodle-heart-left">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#2C2623" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </div>
+
+        <div class="polaroid-card-vintage">
+          <!-- Dòng chữ dọc bên lề trái -->
+          <div class="polaroid-left-sidebar">
+            <span class="polaroid-vertical-caption">YOU'RE INVITED TO CELEBRATE A MILESTONE WORTH REMEMBERING.</span>
+          </div>
+
+          <!-- Khung ảnh chân dung chính -->
+          <div class="polaroid-photo-inner">
+            <img src="../images/chan-dung.jpg" alt="Chân dung Tân khoa Ngô Minh Đức" class="polaroid-vintage-img" loading="eager">
+          </div>
+
+          <!-- Chữ viết tay & Con dấu bưu điện ở lề dưới -->
+          <div class="polaroid-bottom-bar">
+            <div class="handwritten-wishes">
+              <span class="handwritten-line-1">new chapter,</span>
+              <span class="handwritten-line-2">new adventures <span class="caption-heart">♡</span></span>
+              <span class="handwritten-sub">Tân khoa Ngô Minh Đức • K22 HUTECH</span>
+            </div>
+
+            <!-- Con dấu bưu điện tròn (The Next Chapter Awaits • 2026) -->
+            <div class="graduation-postal-stamp" aria-label="Con dấu tốt nghiệp 2026">
+              <svg viewBox="0 0 100 100" class="postal-stamp-svg">
+                <!-- Vòng tròn ngoài nét đứt và vòng trong nét liền -->
+                <circle cx="50" cy="50" r="47" fill="none" stroke="#2C2623" stroke-width="1.5" stroke-dasharray="3 2"/>
+                <circle cx="50" cy="50" r="41.5" fill="none" stroke="#2C2623" stroke-width="1.1"/>
+                
+                <!-- Chữ uốn cong: THE NEXT CHAPTER -->
+                <path id="stampTextTop" d="M 16,50 A 34,34 0 1,1 84,50" fill="none"/>
+                <text font-size="7.5" font-family="'Be Vietnam Pro', sans-serif" font-weight="700" letter-spacing="1.4" fill="#2C2623">
+                  <textPath href="#stampTextTop" startOffset="50%" text-anchor="middle">
+                    THE NEXT CHAPTER
+                  </textPath>
+                </text>
+
+                <!-- Chữ uốn cong: AWAITS -->
+                <path id="stampTextBottom" d="M 84,50 A 34,34 0 0,1 16,50" fill="none"/>
+                <text font-size="7.8" font-family="'Be Vietnam Pro', sans-serif" font-weight="700" letter-spacing="2" fill="#2C2623">
+                  <textPath href="#stampTextBottom" startOffset="50%" text-anchor="middle">
+                    AWAITS
+                  </textPath>
+                </text>
+
+                <!-- Hai vạch ngang & class of 2026 -->
+                <line x1="24" y1="40" x2="76" y2="40" stroke="#2C2623" stroke-width="0.9"/>
+                <text x="50" y="37" text-anchor="middle" font-size="6.5" font-family="'Playfair Display', serif" font-style="italic" fill="#2C2623">class of</text>
+                <text x="50" y="58" text-anchor="middle" font-size="17" font-family="'Playfair Display', serif" font-weight="700" letter-spacing="1" fill="#2C2623">2026</text>
+                <line x1="24" y1="63" x2="76" y2="63" stroke="#2C2623" stroke-width="0.9"/>
+                
+                <!-- Ngôi sao nhỏ hai bên -->
+                <text x="20" y="53" font-size="6" fill="#2C2623">★</text>
+                <text x="76" y="53" font-size="6" fill="#2C2623">★</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lời ngỏ chân thành -->
+      <div class="invitation-letter reveal">
+        <div class="letter-stamp reveal">
+          <i class="fa-solid fa-envelope-open-text"></i>
+        </div>
+        <p class="section-badge reveal reveal-delay-1">THƯ MỜI</p>
+        <h3 class="section-title reveal reveal-delay-1">Lời ngỏ chân thành</h3>
+        <div class="divider-ornament reveal reveal-delay-2">
+          <span></span><i class="fa-solid fa-feather-pointed"></i><span></span>
+        </div>
+        <div class="letter-content">
+          <p class="reveal">
+            Em xin gửi lời cảm ơn và lòng biết ơn sâu sắc nhất từ tận đáy lòng đến Anh Chị Ba!
+          </p>
+          <p class="reveal reveal-delay-1">
+            Suốt những năm tháng qua, ngoài Ba Mẹ ra thì Anh Chị Ba chính là điểm tựa lớn nhất của em. Cảm ơn Anh Chị đã luôn thương em, cùng Ba Mẹ lo lắng, bảo bọc, chỉ bảo và giúp đỡ em hết lòng cả về vật chất lẫn tinh thần để em có thể yên tâm học hành đến ngày hôm nay.
+          </p>
+          <p class="highlight-invitation reveal reveal-delay-2">
+            Tấm bằng tốt nghiệp này không chỉ là nỗ lực của riêng em, mà còn là công sức và sự hy sinh thầm lặng của Anh Chị Ba dành cho đứa em này. Ngày vui trọng đại của cuộc đời em, em chỉ mong có Anh Chị Ba ở bên để cùng chia sẻ niềm tự hào và hạnh phúc này!
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================== -->
+      <!-- KHUÔN HÌNH THỜI GIAN & LỊCH KỶ NIỆM (CALENDAR) -->
+      <!-- Có đường kẻ đứt khúc kiểu cuống vé trên & dưới -->
+      <!-- ============================================== -->
+      <div class="ceremony-calendar-widget reveal">
+        
+        <!-- Đường kẻ đứt khúc & rãnh khuyết hai bên ở phía trên -->
+        <div class="ticket-perforation ticket-perforation-top" aria-hidden="true">
+          <span class="ticket-notch notch-left"></span>
+          <span class="ticket-dashed-line"></span>
+          <span class="ticket-notch notch-right"></span>
+        </div>
+
+        <div class="calendar-ticket-body">
+          <!-- Thanh Time to Fly phía trên -->
+          <div class="calendar-flight-banner reveal">
+            <div class="flight-banner-left">
+              <span class="flight-icon"><i class="fa-solid fa-plane-departure"></i></span>
+              <div class="flight-banner-divider"></div>
+              <div class="flight-banner-text">
+                <span class="flight-title">TIME TO FLY</span>
+                <span class="flight-subtitle">TOWARDS MY FUTURE</span>
+              </div>
+            </div>
+            <div class="flight-banner-right">
+              <span class="flight-symbol heart-symbol"><i class="fa-regular fa-heart"></i></span>
+              <span class="flight-symbol star-symbol"><i class="fa-regular fa-star"></i></span>
+            </div>
+          </div>
+
+          <!-- Cột hiển thị Ngày & Giờ với biểu tượng tròn -->
+          <div class="event-time-showcase">
+            <!-- Cột Ngày -->
+            <div class="time-showcase-col reveal reveal-delay-1">
+              <div class="time-col-icon-circle">
+                <i class="fa-regular fa-calendar-check"></i>
+              </div>
+              <span class="time-col-tag">NGÀY</span>
+              <p class="time-col-day">Thứ Bảy</p>
+              <p class="time-col-date">19.12.2026</p>
+            </div>
+
+            <!-- Cột Giờ -->
+            <div class="time-showcase-col reveal reveal-delay-2">
+              <div class="time-col-icon-circle">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <span class="time-col-tag">GIỜ</span>
+              <p class="time-col-day">Buổi Sáng</p>
+              <p class="time-col-date">08:30</p>
+            </div>
+          </div>
+
+          <!-- Tờ Lịch Tháng 12 / 2026 -->
+          <div class="month-calendar-sheet reveal reveal-delay-2">
+            <div class="month-sheet-header">
+              <h4 class="month-title">Tháng 12 / 2026</h4>
+            </div>
+            <div class="month-sheet-divider"></div>
+
+            <!-- Hàng Thứ (T2 đến CN) -->
+            <div class="calendar-grid-weekdays">
+              <span>T2</span>
+              <span>T3</span>
+              <span>T4</span>
+              <span>T5</span>
+              <span>T6</span>
+              <span>T7</span>
+              <span>CN</span>
+            </div>
+
+            <!-- Lưới các ngày trong tháng 12/2026 (Ngày 1 là Thứ Ba) -->
+            <div class="calendar-grid-days">
+              <!-- Tuần 1: Ngày 1 rơi vào Thứ Ba -->
+              <span class="cal-day cal-empty"></span>
+              <span class="cal-day">1</span>
+              <span class="cal-day">2</span>
+              <span class="cal-day">3</span>
+              <span class="cal-day">4</span>
+              <span class="cal-day">5</span>
+              <span class="cal-day">6</span>
+
+              <!-- Tuần 2 -->
+              <span class="cal-day">7</span>
+              <span class="cal-day">8</span>
+              <span class="cal-day">9</span>
+              <span class="cal-day">10</span>
+              <span class="cal-day">11</span>
+              <span class="cal-day">12</span>
+              <span class="cal-day">13</span>
+
+              <!-- Tuần 3: Ngày 19 Thứ Bảy có Trái Tim đánh dấu -->
+              <span class="cal-day">14</span>
+              <span class="cal-day">15</span>
+              <span class="cal-day">16</span>
+              <span class="cal-day">17</span>
+              <span class="cal-day">18</span>
+              <span class="cal-day cal-special-day" title="Ngày Lễ Tốt Nghiệp 19/12/2026">
+                <span class="cal-heart-badge">
+                  <svg viewBox="0 0 32 32" class="cal-heart-svg">
+                    <path d="M16 28.5 C16 28.5 2.5 19.5 2.5 10.5 A 7 7 0 0 1 16 7 A 7 7 0 0 1 29.5 10.5 C 29.5 19.5 16 28.5 16 28.5 Z"/>
+                  </svg>
+                  <span class="cal-heart-text">19</span>
+                </span>
+              </span>
+              <span class="cal-day">20</span>
+
+              <!-- Tuần 4 -->
+              <span class="cal-day">21</span>
+              <span class="cal-day">22</span>
+              <span class="cal-day">23</span>
+              <span class="cal-day">24</span>
+              <span class="cal-day">25</span>
+              <span class="cal-day">26</span>
+              <span class="cal-day">27</span>
+
+              <!-- Tuần 5 -->
+              <span class="cal-day">28</span>
+              <span class="cal-day">29</span>
+              <span class="cal-day">30</span>
+              <span class="cal-day">31</span>
+              <span class="cal-day cal-empty"></span>
+              <span class="cal-day cal-empty"></span>
+              <span class="cal-day cal-empty"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Đường kẻ đứt khúc & rãnh khuyết hai bên ở phía dưới -->
+        <div class="ticket-perforation ticket-perforation-bottom" aria-hidden="true">
+          <span class="ticket-notch notch-left"></span>
+          <span class="ticket-dashed-line"></span>
+          <span class="ticket-notch notch-right"></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- PHẦN 3: SỔ LƯU BÚT (GUESTBOOK)                -->
+    <!-- ============================================== -->
+    <section class="guestbook-section" id="guestbook">
+      <div class="guestbook-header reveal">
+        <p class="section-badge">GUESTBOOK</p>
+        <h3 class="section-title">Sổ lưu bút</h3>
+        <div class="divider-ornament">
+          <span></span><i class="fa-solid fa-pen-nib"></i><span></span>
+        </div>
+        <p class="guestbook-desc">
+          Hãy để lại những dòng nhắn nhủ, lời chúc yêu thương để tiếp thêm năng lượng cho hành trình mới của Minh Đức nhé!
+        </p>
+      </div>
+
+      <!-- Thẻ Form gửi lời chúc -->
+      <div class="guestbook-card reveal">
+        <form id="wishForm" class="wish-form">
+          <!-- Ô nhập tên -->
+          <div class="form-group reveal">
+            <label for="senderName" class="form-label">
+              <i class="fa-regular fa-user"></i> Tên của bạn <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="senderName" 
+              name="name" 
+              class="form-input" 
+              placeholder="Nhập tên hoặc biệt danh của bạn..." 
+              required 
+              maxlength="100"
+              autocomplete="name"
+            >
+          </div>
+
+          <!-- Ô nhập lời chúc -->
+          <div class="form-group reveal reveal-delay-1">
+            <div class="label-with-action">
+              <label for="wishMessage" class="form-label">
+                <i class="fa-regular fa-comment-dots"></i> Lời chúc của bạn <span class="required">*</span>
+              </label>
+              <!-- Nút gợi ý lời chúc nhanh (icon bóng đèn) -->
+              <button type="button" id="quickWishBtn" class="btn-quick-suggestion" title="Xem gợi ý lời chúc hay">
+                <i class="fa-regular fa-lightbulb"></i>
+                <span>Gợi ý lời chúc</span>
+              </button>
+            </div>
+
+            <div class="textarea-wrapper">
+              <textarea 
+                id="wishMessage" 
+                name="message" 
+                class="form-textarea" 
+                placeholder="Gửi gắm những lời chúc ý nghĩa, lời động viên hoặc kỷ niệm của bạn tới Đức tại đây..." 
+                required 
+                maxlength="500"
+                rows="4"
+              ></textarea>
+              <!-- Bộ đếm ký tự 0/500 -->
+              <div class="char-counter">
+                <span id="charCount">0</span>/500
+              </div>
+            </div>
+          </div>
+
+          <!-- Nút Gửi lời chúc -->
+          <button type="submit" id="submitWishBtn" class="btn btn-submit reveal reveal-delay-2">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span class="btn-text">Gửi lời chúc</span>
+          </button>
+        </form>
+
+        <!-- Thông báo trạng thái gửi -->
+        <div id="formAlert" class="form-alert" style="display: none;"></div>
+      </div>
+
+      <!-- Modal Gợi ý lời chúc nhanh -->
+      <div id="quickWishModal" class="quick-wish-modal">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h4><i class="fa-solid fa-lightbulb"></i> Gợi ý lời chúc tốt nghiệp</h4>
+            <button type="button" class="btn-close-modal" id="closeModalBtn" aria-label="Đóng">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p class="modal-intro">Bấm vào lời chúc bên dưới để chèn nhanh vào ô nhập:</p>
+            <div class="suggestions-list">
+              <button type="button" class="suggestion-item">
+                🎓 Chúc mừng Minh Đức đã xuất sắc cán đích 4 năm đại học! Chúc bạn sự nghiệp thăng hoa, tự tin chinh phục mọi ước mơ phía trước!
+              </button>
+              <button type="button" class="suggestion-item">
+                ✨ Mừng ngày tân khoa! Chúc bạn bước sang chặng đường mới luôn tràn đầy nhiệt huyết, gặt hái thật nhiều thành công và may mắn!
+              </button>
+              <button type="button" class="suggestion-item">
+                🎉 Cột mốc tuyệt vời! Tự hào về Đức rất nhiều. Chúc người bạn của tui sớm thành công và luôn vững bước trên con đường đã chọn nhé!
+              </button>
+              <button type="button" class="suggestion-item">
+                🚀 Chúc mừng tân kỹ sư/cử nhân tài năng! Chúc công việc thuận lợi, lương thưởng rủng rỉnh và luôn giữ mãi nụ cười rạng rỡ này!
+              </button>
+              <button type="button" class="suggestion-item">
+                🍀 4 năm thanh xuân rực rỡ đã khép lại thật trọn vẹn. Chúc Đức chân cứng đá mềm, mở ra tương lai rạng ngời và hạnh phúc!
+              </button>
+              <button type="button" class="suggestion-item">
+                ❤️ Chúc mừng tân khoa K22 HUTECH! Luôn tự tin vào chính mình và không ngừng tỏa sáng nhé!
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- PHẦN: BẢN ĐỒ GOOGLE MAPS DẪN ĐƯỜNG             -->
+    <!-- ============================================== -->
+    <section class="map-section" id="location-map">
+      <div class="map-card reveal">
+        <div class="map-card-header reveal">
+          <div class="map-icon-badge">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </div>
+          <div class="map-header-text">
+            <span class="map-badge-tag">BẢN ĐỒ ĐỊA ĐIỂM</span>
+            <h3 class="map-card-title">Chỉ đường đến buổi lễ</h3>
+          </div>
+        </div>
+
+        <div class="map-location-info reveal reveal-delay-1">
+          <p class="map-venue-name">Đại học HUTECH Khu E</p>
+          <p class="map-venue-address">
+            <i class="fa-solid fa-location-dot"></i>
+            10/80c Song Hành Xa Lộ Hà Nội, Tăng Nhơn Phú, Hồ Chí Minh, Việt Nam
+          </p>
+        </div>
+
+        <!-- Khung nhúng Google Maps trực tiếp -->
+        <div class="map-embed-wrapper reveal reveal-delay-1">
+          <iframe 
+            src="https://maps.google.com/maps?q=%C4%90%E1%BA%A1i+H%E1%BB%8Dc+Hutech+Khu+E,+10/80c+Song+H%C3%A0nh+Xa+L%E1%BB%99+H%C3%A0+N%E1%BB%99i,+T%C4%83ng+Nh%C6%A1n+Ph%C3%BA,+H%E1%BB%93+Ch%C3%AD+Minh&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+            width="100%" 
+            height="260" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Bản đồ vị trí Đại học HUTECH Khu E">
+          </iframe>
+        </div>
+
+        <!-- Nút mở chỉ đường trên ứng dụng Google Maps -->
+        <div class="map-actions reveal reveal-delay-2">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=%C4%90%E1%BA%A1i+H%E1%BB%8Dc+Hutech+Khu+E,+10/80c+Song+H%C3%A0nh+Xa+L%E1%BB%99+H%C3%A0+N%E1%BB%99i,+T%C4%83ng+Nh%C6%A1n+Ph%C3%BA,+H%E1%BB%93+Ch%C3%AD+Minh" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-open-map">
+            <i class="fa-solid fa-diamond-turn-right"></i>
+            <span>Chỉ đường Google Maps</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================== -->
+    <!-- PHẦN 4: CHÂN TRANG (FOOTER)                   -->
+    <!-- ============================================== -->
+    <footer class="footer-section" id="footer">
+      <div class="footer-card reveal">
+        <!-- Trích dẫn từ dải băng -->
+        <div class="footer-quote-wrap reveal">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="footer-quote">
+            "Cảm ơn Ba Mẹ đã dành cả thanh xuân để đổi lấy tương lai cho con"
+          </p>
+          <span class="quote-signature">— Dải băng tốt nghiệp K22 —</span>
+        </div>
+
+        <div class="footer-message reveal reveal-delay-1">
+          <p>
+            Chân thành cảm ơn sự hiện diện và những tình cảm ấm áp mà quý Thầy Cô, gia đình và bạn bè đã dành cho Đức!
+          </p>
+        </div>
+
+        <!-- Thông tin liên hệ nhanh -->
+        <div class="quick-contact reveal reveal-delay-1">
+          <span class="contact-title">KẾT NỐI VỚI ĐỨC:</span>
+          <div class="contact-buttons">
+            <a href="tel:0377294114" class="contact-btn" title="Gọi điện cho Minh Đức: 0377 294 114">
+              <i class="fa-solid fa-phone"></i>
+              <span>0377 294 114</span>
+            </a>
+            <a href="https://zalo.me/0377294114" target="_blank" rel="noopener noreferrer" class="contact-btn zalo-btn" title="Nhắn qua Zalo: 0377 294 114">
+              <i class="fa-solid fa-comment-dots"></i>
+              <span>Zalo</span>
+            </a>
+            <a href="https://www.facebook.com/dung.letin.3" target="_blank" rel="noopener noreferrer" class="contact-btn fb-btn" title="Facebook Minh Đức">
+              <i class="fa-brands fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Nút chia sẻ thiệp -->
+        <div class="share-invitation reveal reveal-delay-2">
+          <button type="button" id="shareBtn" class="btn btn-outline-share">
+            <i class="fa-regular fa-clone"></i>
+            <span>Sao chép liên kết thiệp</span>
+          </button>
+        </div>
+
+        <div class="footer-copyright reveal reveal-delay-2">
+          <p>© 2026 Ngô Minh Đức • K22 Đại học HUTECH</p>
+          <p class="small-tag">Designed with <i class="fa-solid fa-heart heart-beat"></i> for Graduation Day</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Gợi ý lướt xuống nho nhỏ, thẩm mỹ ở chính giữa góc dưới màn hình -->
+  <div id="scrollHint" class="scroll-hint" aria-hidden="true">
+    <span class="scroll-hint-text">Lướt xuống</span>
+    <span class="scroll-hint-arrows">
+      <svg class="scroll-hint-chevron chevron-top" viewBox="0 0 16 8" width="13" height="6.5" fill="none">
+        <path d="M1.5 1.5L8 6.5L14.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg class="scroll-hint-chevron chevron-bottom" viewBox="0 0 16 8" width="13" height="6.5" fill="none">
+        <path d="M1.5 1.5L8 6.5L14.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </div>
+
+  <!-- Toast notification component -->
+  <div id="toastNotification" class="toast-notification"></div>
+
+  <!-- JavaScript (v=2026112604 để tránh cache JS cũ) -->
+  <script src="../js/script.js?v=2026112604"></script>
+</body>
+</html>
