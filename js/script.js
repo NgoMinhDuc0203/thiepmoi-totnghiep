@@ -67,17 +67,22 @@ function initRecipientFromUrl() {
     const toParam = params.get("to") || params.get("name") || params.get("nguoinhan");
     if (!toParam) return;
 
-    let cleanName = decodeURIComponent(toParam).trim();
+    let cleanName = toParam.trim();
+    if (/%[0-9A-Fa-f]{2}/.test(cleanName)) {
+      try {
+        cleanName = decodeURIComponent(cleanName).trim();
+      } catch (_) {}
+    }
     if (!cleanName) return;
 
-    // Nếu ở trang nhóm 3 (/i/) và người dùng chỉ gõ tên (ví dụ: ?to=Hằng hoặc ?to=Chị+Hằng)
+    // Nếu ở trang nhóm 3 (/i/) và người dùng chỉ gõ tên (ví dụ: ?to=Trâm hoặc ?to=Chị+Trâm)
     const isSpecialMentorPage = document.body.classList.contains("page-mentor-group");
     let displayName = cleanName;
     if (isSpecialMentorPage) {
-      if (!/^chị\b/i.test(displayName)) {
+      if (!/^(?:chị|các\s+chị)(?:\s|$)/i.test(displayName)) {
         displayName = "Chị " + displayName;
       }
-      if (!/kính mến$/i.test(displayName)) {
+      if (!/kính\s+mến$/i.test(displayName)) {
         displayName = displayName + " kính mến";
       }
     }
