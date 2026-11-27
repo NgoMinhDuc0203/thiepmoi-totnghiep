@@ -323,15 +323,21 @@ body.envelope-locked {
 }
 
 .envelope-pocket-to {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  padding: 0 22px;
+  line-height: 1.25;
 }
 
 .envelope-pocket-to em {
-  font-family: var(--font-serif);
-  color: var(--text-main);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.02rem;
   font-weight: 600;
+  color: var(--accent-burgundy);
+  letter-spacing: 0.2px;
 }
 
 /* Nắp phong bì 3D */
@@ -951,6 +957,7 @@ button {
 .card-salutation {
   display: inline-flex;
   flex-direction: column;
+  max-width: 100%;
   margin: 10px 0 12px 0;
 }
 
@@ -963,9 +970,13 @@ button {
 }
 
 .recipients-name {
-  font-size: 0.95rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
   font-weight: 600;
-  color: var(--text-main);
+  color: var(--accent-burgundy);
+  line-height: 1.25;
+  letter-spacing: 0.2px;
   margin-top: 2px;
 }
 
@@ -2845,6 +2856,19 @@ button {
   }
   .school-vn {
     font-size: 0.66rem;
+  }
+  .recipients-name {
+    font-size: 1.32rem;
+  }
+  .envelope-pocket-bottom {
+    padding-bottom: 10px;
+  }
+  .envelope-pocket-to {
+    font-size: 0.68rem;
+    padding: 0 16px;
+  }
+  .envelope-pocket-to em {
+    font-size: 0.9rem;
   }
   .portrait-showcase-section {
     padding: 20px 4px 16px 4px;
